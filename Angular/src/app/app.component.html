@@ -1,0 +1,22 @@
+<!-- app.component.html -->
+<div class="calculator-container">
+  <h1>Calculadora de CDB</h1>
+  <form>
+    <label for="amount">Valor Inicial:</label>
+    <input id="amount" [(ngModel)]="ValorInicial" name="amount" type="number" placeholder="Digite o valor inicial" />
+
+    <label for="months">Número de Meses:</label>
+    <input id="months" [(ngModel)]="Meses" name="months" type="number"
+      placeholder="Digite o número de meses" />
+
+    <button (click)="Calculo()">Calcular</button>
+  </form>
+
+  <div *ngIf="finalBruto">
+    <p>Valor Final Bruto: {{ finalBruto | currency:'BRL' }}</p>
+  </div>
+
+  <div *ngIf="finalLiquido">
+    <p>Valor Final Liquido: {{ finalLiquido | currency:'BRL' }}</p>
+  </div>
+</div>
